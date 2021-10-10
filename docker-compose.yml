@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 services:
   #  web:
   #    image: nginx:alpine
@@ -61,3 +61,4 @@ services:
 networks:
   private:
     external: true
+    name: "pre-defined-name"
