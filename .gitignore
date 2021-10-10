@@ -1,0 +1,12 @@
+# Global
+.*.swp
+.DS_Store
+
+#DATA
+data/
+
+# VSCode
+.vscode/
+
+# SSL Certs
+etc/ssl/
