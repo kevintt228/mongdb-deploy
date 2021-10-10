@@ -13,7 +13,7 @@ services:
   #      - "8080:80"
   #      - "4433:443"
   #    networks:
-  #      - overlay
+  #      - private
   #    restart: always
   #    env_file:
   #      - ".env"
@@ -29,7 +29,7 @@ services:
     ports:
       - "8806:3306"
     networks:
-      - overlay
+      - private
     restart: always
     env_file:
       - ".env"
@@ -47,7 +47,7 @@ services:
     ports:
       - "8017:27017"
     networks:
-      - overlay
+      - private
     restart: always
     env_file:
       - ".env"
@@ -59,4 +59,5 @@ services:
       - MONGO_INITDB_PASSWORD=${MONGO_PASSWORD}
 
 networks:
-  overlay:
+  private:
+    external: true
