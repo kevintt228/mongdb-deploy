@@ -1,25 +1,25 @@
 version: "3"
 services:
-  web:
-    image: nginx:alpine
-    container_name: ${NGINX_HOST}
-    volumes:
-      - "./etc/nginx/templates:/etc/nginx/templates"
-      - "./etc/ssl:/etc/ssl"
-      - "./web:/var/www/html"
-      - "./run/nginx/cache:/var/cache/nginx"
-      - "./run/nginx/pid:/var/run"
-    ports:
-      - "8080:80"
-      - "4433:443"
-    networks:
-      - overlay
-    restart: always
-    env_file:
-      - ".env"
-    environment:
-      - NGINX_HOST=${NGINX_HOST}
-      - NGINX_PORT=80
+  #  web:
+  #    image: nginx:alpine
+  #    container_name: ${NGINX_HOST}
+  #    volumes:
+  #      - "./etc/nginx/templates:/etc/nginx/templates"
+  #      - "./etc/ssl:/etc/ssl"
+  #      - "./web:/var/www/html"
+  #      - "./run/nginx/cache:/var/cache/nginx"
+  #      - "./run/nginx/pid:/var/run"
+  #    ports:
+  #      - "8080:80"
+  #      - "4433:443"
+  #    networks:
+  #      - overlay
+  #    restart: always
+  #    env_file:
+  #      - ".env"
+  #    environment:
+  #      - NGINX_HOST=${NGINX_HOST}
+  #      - NGINX_PORT=80
 
   mysqldb:
     image: mysql:${MYSQL_VERSION}
