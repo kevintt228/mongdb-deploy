@@ -1,0 +1,9 @@
+# /etc/mysql/mysql.conf.d/none-root.cnf
+skip-grant-tables
+
+# 1, mount volume in docker
+#   './etc/mysql/my.noroot.cnf:/etc/mysql/mysql.conf.d/noroot.cnf'
+# 2, stop docker, and remove the volume mounted
+# 3, start docker container and login mysql without root password
+# 4, ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123123';
+     ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123123';
