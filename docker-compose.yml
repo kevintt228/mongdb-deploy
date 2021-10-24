@@ -31,7 +31,7 @@ services:
         networks:
             - private
         restart: always
-        command: redis-server /etc/redis.conf
+        command: ['redis-server', '/etc/redis.conf']
 
     redis-commander:
         image: rediscommander/redis-commander:latest
