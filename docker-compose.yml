@@ -36,6 +36,8 @@ services:
         ports:
             - '8083:8081'
         restart: always
+        depends_on:
+            - redis
         environment:
             - HTTP_USER=${HTTP_USER}
             - HTTP_PASSWORD=${HTTP_PASSWORD}
@@ -83,6 +85,7 @@ services:
         container_name: ${MONGOEXPRESS_HOST}
         ports:
             - '8082:8081'
+        restart: always
         depends_on:
             - mongodb
         env_file:
