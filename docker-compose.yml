@@ -69,6 +69,7 @@ services:
         env_file:
             - '.env'
         environment:
+            - ME_CONFIG_SITE_BASEURL="/mongo/"
             - ME_CONFIG_BASICAUTH_USERNAME=${MONGO_ADMIN}
             - ME_CONFIG_BASICAUTH_PASSWORD=${MONGO_ADMIN_PASSWORD}
             - ME_CONFIG_MONGODB_SERVER=${MONGO_HOST}
@@ -76,7 +77,6 @@ services:
             - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
             - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGO_ADMIN}
             - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_ADMIN_PASSWORD}
-            - ME_CONFIG_SITE_BASEURL="/mongo/"
         networks:
             - private
 
