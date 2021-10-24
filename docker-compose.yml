@@ -83,4 +83,4 @@ services:
 networks:
     private:
         external: true
-        name: 'pre-defined-name'
+        name: 'venusdev'
