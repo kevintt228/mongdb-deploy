@@ -30,6 +30,16 @@ services:
         networks:
             - private
         restart: always
+    redis-commander:
+        image: rediscommander/redis-commander:latest
+        container_name: redis-commander
+        ports:
+            - '8083:8081'
+        restart: always
+        environment:
+            - HTTP_USER=${HTTP_USER}
+            - HTTP_PASSWORD=${HTTP_PASSWORD}
+            - REDIS_HOSTS=${REDIS_HOST}
     mysqldb:
         image: mysql:${MYSQL_VERSION}
         container_name: ${MYSQL_HOST}
@@ -79,8 +89,8 @@ services:
             - '.env'
         environment:
             - ME_CONFIG_SITE_BASEURL=/mongo/
-            - ME_CONFIG_BASICAUTH_USERNAME=${MONGO_ADMIN}
-            - ME_CONFIG_BASICAUTH_PASSWORD=${MONGO_ADMIN_PASSWORD}
+            - ME_CONFIG_BASICAUTH_USERNAME=${HTTP_USER}
+            - ME_CONFIG_BASICAUTH_PASSWORD=${HTTP_PASSWORD}
             - ME_CONFIG_MONGODB_SERVER=${MONGO_HOST}
             - ME_CONFIG_MONGODB_PORT=27017
             - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
