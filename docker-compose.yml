@@ -63,7 +63,9 @@ services:
         image: mongo-express
         container_name: ${MONGOEXPRESS_HOST}
         ports:
-            - '8081:8081'
+            - '8082:8081'
+        depends_on:
+            - mongodb
         env_file:
             - '.env'
         environment:
@@ -74,7 +76,7 @@ services:
             - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
             - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGO_ADMIN}
             - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_ADMIN_PASSWORD}
-            - ME_CONFIG_SITE_BASEURL="/mongoexpress/"
+            - ME_CONFIG_SITE_BASEURL="/mongo/"
         networks:
             - private
 
