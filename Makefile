@@ -18,4 +18,5 @@ docker-stop:
 logs:
 	@docker-compose logs -f
 
-
+#docker exec some-mysql sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > /home/all-databases.sql
+#docker exec -i some-mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < /some/path/on/your/host/all-databases.sql
