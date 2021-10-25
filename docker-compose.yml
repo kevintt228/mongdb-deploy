@@ -33,9 +33,6 @@ services:
         restart: always
         environment:
             - REDIS_PASSWORD=${REDIS_PASSWORD}
-        sysctls:
-            - vm.overcommit_memory=1
-            - net.core.somaxconn=65535
         command: /bin/sh -c "apk add --update libintl && apk add --virtual build_deps gettext && envsubst '$$REDIS_PASSWORD' < /etc/redis/default.conf.template > /etc/redis/redis.conf && redis-server /etc/redis/redis.conf"
 
     redis-commander:
