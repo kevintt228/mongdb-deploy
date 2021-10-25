@@ -33,7 +33,7 @@ services:
         restart: always
         environment:
             - REDIS_PASSWORD=${REDIS_PASSWORD}
-        command: /bin/sh -c "apk add envsubst && envsubst '$$REDIS_PASSWORD' < /etc/redis/default.conf.template > /etc/redis/redis.conf && redis-server /etc/redis/redis.conf"
+        command: /bin/sh -c "envsubst '$$REDIS_PASSWORD' < /etc/redis/default.conf.template > /etc/redis/redis.conf && redis-server /etc/redis/redis.conf"
 
     redis-commander:
         image: rediscommander/redis-commander:latest
