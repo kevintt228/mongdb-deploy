@@ -2,6 +2,7 @@
 
 skip-host-cache
 skip-name-resolve
+lower_case_table_names = 1
 
 server-id = 10
 log_bin = /var/log/mysql/mysql-bin.log

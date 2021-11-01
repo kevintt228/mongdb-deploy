@@ -1,5 +1,6 @@
 # /etc/mysql/mysql.conf.d/none-root.cnf
 skip-grant-tables
+lower_case_table_names = 1
 
 # 1, mount volume in docker
 #   './etc/mysql/my.noroot.cnf:/etc/mysql/mysql.conf.d/noroot.cnf'
