@@ -60,7 +60,7 @@ services:
         container_name: ${MYSQL_HOST}
         volumes:
             - './data/db/mysql:/var/lib/mysql'
-        #    - './etc/mysql/my.noroot.cnf:/etc/mysql/mysql.conf.d/noroot.cnf'
+            - './etc/mysql/my.${MYSQL_SERVER}.cnf:/etc/mysql/mysql.conf.d/${MYSQL_SERVER}.cnf'
         ports:
             - '8806:3306'
         networks:
